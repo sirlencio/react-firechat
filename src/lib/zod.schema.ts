@@ -26,8 +26,14 @@ export const profileZodSchema = z.object({
 export type ProfileZodSchemaType = z.infer<typeof profileZodSchema>
 
 export const taskZodSchema = z.object({
-    title: z.string().min(1,"Title is required").max(100, "Title must be at most 100 characters long"),
+    title: z.string().min(1, "Title is required").max(100, "Title must be at most 100 characters long"),
     description: z.string().max(500, "Description must be at most 500 characters long").optional(),
 });
 
 export type TaskZodSchemaType = z.infer<typeof taskZodSchema>
+
+export const messageZodSchema = z.object({
+    text: z.string().trim().min(1, "Escriba algo por favor")
+})
+
+export type messageZodSchemaType = z.infer<typeof messageZodSchema>
