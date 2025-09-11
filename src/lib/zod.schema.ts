@@ -37,3 +37,10 @@ export const messageZodSchema = z.object({
 })
 
 export type messageZodSchemaType = z.infer<typeof messageZodSchema>
+
+
+export const emailFriendZodSchema = z.object({
+    email: z.string().trim().pipe(z.email("Invalid mail format")),
+})
+
+export type emailFriendZodSchemaType = z.infer<typeof emailFriendZodSchema>
