@@ -44,19 +44,22 @@ const FormMessageChat = ({ roomId }: Props) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
-        <FormField
-          control={form.control}
-          name="text"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="..." {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex w-full">
+        <div className="w-full mr-4">
+          <FormField
+            control={form.control}
+            name="text"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="..." {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
         <Button type="submit" disabled={isLoading}>
           {isLoading ? "Sending message..." : "Send"}
         </Button>

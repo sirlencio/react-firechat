@@ -31,7 +31,7 @@ const AuthenticatedLayout = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 box-border">
         <Outlet />
       </div>
     </div>

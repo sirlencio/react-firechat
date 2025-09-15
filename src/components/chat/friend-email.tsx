@@ -6,7 +6,7 @@ interface Props {
 
 const FriendEmail = ({ friendUID }: Props) => {
   const { friend } = useFriendInfo(friendUID);
-  return friend.email;
+  return <span className="font-bold">{friend.displayName}</span>;
 };
 
 export default FriendEmail;

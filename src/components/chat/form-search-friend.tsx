@@ -49,7 +49,8 @@ const FomrSearchFriend = ({handleClickRoomId}: Props) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2 flex w-full p-4">
+        <div className="w-full mr-4">
         <FormField
           control={form.control}
           name="email"
@@ -62,7 +63,8 @@ const FomrSearchFriend = ({handleClickRoomId}: Props) => {
             </FormItem>
           )}
         />
-        <Button type="submit" variant={"outline"} className="w-full" disabled={isLoading}>{isLoading ? "Buscando friend..." : "Buscar"}</Button>
+        </div>
+        <Button type="submit" variant={"outline"} disabled={isLoading}>{isLoading ? "Buscando friend..." : "Buscar"}</Button>
       </form>
     </Form>
   );
